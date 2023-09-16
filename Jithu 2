@@ -1,0 +1,46 @@
+names<-c("Ram","Shyam","Kumar") 
+age<-c(23,24,35) 
+marks<-c(88,78,25) 
+df<-data.frame(names,age,marks) 
+quanƟle(df $age)
+write.csv(df,"datafr.csv")
+
+
+a <- c(80,70,50,60,70,100) 
+result<-
+(pie(a,main="piechart",labels=c("student1","student2","student3","student 
+4","student 5","student 6"), 
+ col = c("red", "orange", "yellow", "blue", "green","black")))
+
+
+original_vector <- c(3,5,5,8,9,12,12,13,15,16,17,19,22,24,25,134) 
+x <-mean(original_vector) 
+print(paste("Mean:",x)) 
+u <-sd(original_vector) 
+print(paste("S.D:",u)) 
+normalized_vector <- (original_vector - x) / u 
+print(normalized vector) 
+
+
+# Load a dataset 
+data(iris) 
+# Select the variables to be used for clustering 
+x <- iris[, c("Sepal. Length", "Sepal. Width", "Petal. Length", "Petal. Width")] 
+# Perform K-means clustering with K=3 
+kmeans_model <- kmeans(x, centers = 3) 
+# Print the results 
+kmeans_model 
+# Create a scaƩerplot of the first two variables with points colored by cluster
+library(ggplot2) 
+ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width,color=factor(kmeans_model$cluste))
+
+
+x <- rnorm(100, mean = 0, sd = 1) 
+
+hist(x) 
+
+dnorm(1, mean = 0, sd = 1) 
+
+pnorm(1, mean = 0, sd = 1)
+
+
