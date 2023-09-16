@@ -1,0 +1,115 @@
+library(caret) 
+gfg <- c(244,753,596,645,874,141,639,465,999,654) 
+ss <- preProcess(as.data.frame(gfg), method=c("range")) 
+gfg <- predict(ss, as.data.frame(gfg))
+gig
+
+
+num1=as.integer(readline(prompt = "Enter the num 1:")) 
+num2 =as.integer(readline(prompt = "Enter a number2:")) 
+sum=num1+num2 
+print((paste("sum:",sum)))
+
+height <-c(150,174, 138, 186, 128, 136, 171, 163, 152, 131) 
+result.mean <-mean(height) 
+print(result.mean)
+
+temperatures <- c(20, 22, 25, 29, 23, 27, 28) 
+
+result <- barplot(temperatures, 
+
+ main = "Maximum Temperatures in a Week", 
+
+ xlab = "Degree Celsius", 
+
+ ylab = "Day", 
+
+ names.arg = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"), 
+
+ col = "blue",
+
+
+b <- c(10,12,13,14,17,19,20,30,50,70,90,100) 
+print(boxplot(b,col="green"))
+
+library(rpart) 
+library(rpart.plot) 
+data=read.csv("C:\\Users\\arunk\\OneDrive\\Desktop\\DWDM\\Gender.csv") 
+tree <- rpart(Height ~ Gender+Weight,data) 
+a <- data.frame(Gender=c("Male"),Weight=c(85)) 
+result <- predict(tree,a) 
+print(result) 
+rpart.plot(tree) 
+tree1 <- rpart(Gender~ Height+Weight,data) 
+a <- data.frame(Height=c(170),Weight=c(85)) 
+result <- predict(tree,a) 
+print(result) 
+rpart.plot(tree1)
+
+
+num1=as.integer(readline(prompt = "Enter the number 1:")) 
+num2 =as.integer(readline(prompt = "Enter a number2:")) 
+div=num1/num2 
+print((paste("Division:",div)))
+
+temperatures <- c(20, 22, 25, 29, 23, 27, 28) 
+result <- hist(temperatures, 
+ main = "Maximum Temperatures in a Week", 
+ xlab = "Degree Celsius", 
+ ylab = "Day", 
+ names.arg = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"), 
+ col="green" 
+) 
+print(result)
+
+
+x <-c(150,174, 138, 186, 128, 136, 171, 163, 152, 131) 
+y<-c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48) 
+relaƟon <-lm(y~x) 
+print(summary(relaƟon))
+a <-data.frame(x=170) 
+result <- predict(relaƟon,a)
+print(result) 
+png(file = "linear_regression.png") 
+plot(y,x,col = "red",main = "Height and Weight Regression",abline(lm(x~y)),cex = 
+1.3,pch = 16,xlab = "Weight in Kg",ylab = "Height in cm"
+
+height <-c(150,174, 138, 186, 128, 136, 171, 163, 152, 131) 
+result.median <-median(height) 
+print(result.median)
+
+original_vector <- c(10, 20, 30, 40, 50) 
+normalized_vector<-(original_vector- min(original_vector)) / (max(original_vector) 
+- min(original_vector)) 
+print(normalized_vector) 
+original_vector <- c(100, 200, 309, 40, 50,60,70,80,90,10) 
+normalized_vector<-(original_vector- min(original_vector)) / (max(original_vector) 
+- min(original_vector)) 
+print(normalized_vector)
+
+getmode <- funcƟon(v) 
+ { 
+ uniqv <- unique(v) 
+ uniqv[which.max(tabulate(match(v, uniqv)))] 
+} 
+v <- c(150,174, 138, 186, 128, 136, 171, 163, 152, 131,171,131,171) 
+result <- getmode(v) 
+print(result)
+
+
+d=read.csv("C:\\Users\\arunk\\OneDrive\\Desktop\\DWDM\\set1.csv") 
+View(d) 
+summary(d) 
+plot(d$Glucose,d$DiabetesPedigreeFuncƟon)
+p1=runif(nrow(d)) 
+p2=order(p1) 
+training_ds=d[p2[1:25],] 
+test_ds=d[p2[26:39],] 
+MulƟple_resgression=lm(DiabetesPedigreeFuncƟon~Glucose+Age, 
+data=training_ds) 
+abline(MulƟple_resgression,col="red")
+summary(MulƟple_resgression)
+plot(MulƟple_resgression)
+pred_values=predict(MulƟple_resgression,newdata = test_ds)
+test_ds$pred_DiabetesPedigreeFuncƟon=pred_values
+
