@@ -1,0 +1,83 @@
+#include <iostream>
+#include <string>
+
+class Student {
+private:
+    std::string name;
+    int rollNumber;
+    std::string address;
+    std::string city;
+    int* marks;
+    int numSubjects;
+
+public:
+    // Constructor to initialize the student's information
+    Student(const std::string& n, int roll, const std::string& addr, const std::string& c, int numSub) {
+        name = n;
+        rollNumber = roll;
+        address = addr;
+        city = c;
+        numSubjects = numSub;
+        marks = new int[numSubjects];
+    }
+
+    // Member function to input marks
+    void inputMarks() {
+        std::cout << "Enter marks for " << name << " (Roll Number: " << rollNumber << "):" << std::endl;
+        for (int i = 0; i < numSubjects; i++) {
+            std::cout << "Enter marks for Subject " << i + 1 << ": ";
+            std::cin >> marks[i];
+        }
+    }
+
+    // Member function to calculate the sum of total marks
+    int calculateTotalMarks() {
+        int total = 0;
+        for (int i = 0; i < numSubjects; i++) {
+            total += marks[i];
+        }
+        return total;
+    }
+
+    // Member function to calculate the average marks
+    float calculateAverageMarks() {
+        int total = calculateTotalMarks();
+        return static_cast<float>(total) / numSubjects;
+    }
+
+    // Destructor to free dynamically allocated memory
+    ~Student() {
+        delete[] marks;
+    }
+};
+
+int main() {
+    std::string name, address, city;
+    int rollNumber, numSubjects;
+
+    // Input student information
+    std::cout << "Enter Student Name: ";
+    std::cin >> name;
+    std::cout << "Enter Roll Number: ";
+    std::cin >> rollNumber;
+    std::cout << "Enter Address: ";
+    std::cin >> address;
+    std::cout << "Enter City: ";
+    std::cin >> city;
+    std::cout << "Enter the number of subjects: ";
+    std::cin >> numSubjects;
+
+    // Create a Student object
+    Student student(name, rollNumber, address, city, numSubjects);
+
+    // Input marks and calculate results
+    student.inputMarks();
+    int totalMarks = student.calculateTotalMarks();
+    float averageMarks = student.calculateAverageMarks();
+
+    // Display results
+    std::cout << "Total Marks: " << totalMarks << std::endl;
+    std::cout << "Average Marks: " << averageMarks << std::endl;
+
+    return 0;
+}
